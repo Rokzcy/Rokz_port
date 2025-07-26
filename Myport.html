@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rokzcy Excellence | Security Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000', // Black
+                        secondary: '#4169E1', // Royal Blue
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #000000 0%, #4169E1 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(65, 105, 225, 0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #4169E1;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .terminal {
+            background-color: #111827;
+            color: #10B981;
+            font-family: 'Courier New', monospace;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .terminal::before {
+            content: 'root@rokzcy:~$';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #4169E1;
+            font-weight: bold;
+        }
+        
+        .typing-effect {
+            overflow: hidden;
+            border-right: .15em solid #4169E1;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #4169E1 }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-primary text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <i class="fas fa-user-secret text-secondary text-2xl mr-2"></i>
+                    <span class="font-bold text-xl">Rokzcy Excellence</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-secondary">Home</a>
+                    <a href="#about" class="nav-link hover:text-secondary">About</a>
+                    <a href="#skills" class="nav-link hover:text-secondary">Skills</a>
+                    <a href="#projects" class="nav-link hover:text-secondary">Projects</a>
+                    <a href="#certifications" class="nav-link hover:text-secondary">Certifications</a>
+                    <a href="#ctf" class="nav-link hover:text-secondary">CTF</a>
+                    <a href="#contact" class="nav-link hover:text-secondary">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-primary pb-4">
+            <a href="#home" class="block px-4 py-2 hover:bg-secondary">Home</a>
+            <a href="#about" class="block px-4 py-2 hover:bg-secondary">About</a>
+            <a href="#skills" class="block px-4 py-2 hover:bg-secondary">Skills</a>
+            <a href="#projects" class="block px-4 py-2 hover:bg-secondary">Projects</a>
+            <a href="#certifications" class="block px-4 py-2 hover:bg-secondary">Certifications</a>
+            <a href="#ctf" class="block px-4 py-2 hover:bg-secondary">CTF</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-secondary">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    <span class="gradient-text">Rokzcy Excellence</span>
+                </h1>
+                <div class="terminal p-6 mb-6">
+                    <p class="typing-effect">Penetration Tester | Ethical Hacker | Red Teamer</p>
+                </div>
+                <p class="text-lg mb-8">Identifying vulnerabilities before they become threats. Securing systems through offensive security practices.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition duration-300">Get In Touch</a>
+                    <a href="#projects" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition duration-300">View Work</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 bg-secondary rounded-full flex items-center justify-center">
+                    <div class="absolute inset-0 rounded-full border-4 border-white animate-ping opacity-75"></div>
+                    <div class="absolute inset-4 rounded-full border-4 border-white animate-ping opacity-50"></div>
+                    <i class="fas fa-user-secret text-white text-8xl"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800 text-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">
+                <span class="border-b-4 border-secondary pb-2">About Me</span>
+            </h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="terminal p-6">
+                        <p class="mb-4">> whoami</p>
+                        <p class="text-green-400">Rokzcy Excellence - Security Professional</p>
+                        <p class="mb-4">> cat bio.txt</p>
+                        <p>I am a passionate security professional specializing in penetration testing, ethical hacking, and red team operations. With a hacker's mindset and a defender's knowledge, I help organizations identify and remediate vulnerabilities before they can be exploited by malicious actors.</p>
+                        <p class="mt-4">My approach combines technical expertise with creative problem-solving to simulate real-world attacks and provide actionable security recommendations.</p>
+                        <p class="mt-4">When I'm not breaking into systems (ethically), you can find me researching new attack vectors, contributing to open-source security tools, or mentoring aspiring security professionals.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-secondary">My Security Philosophy</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-secondary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Security Through Offense</h4>
+                                    <p class="text-gray-600">The best defense is understanding the offense. I believe in proactively finding and fixing vulnerabilities before attackers can exploit them.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-secondary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Continuous Learning</h4>
+                                    <p class="text-gray-600">The security landscape evolves daily. I dedicate significant time to staying current with emerging threats, attack techniques, and defensive strategies.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-secondary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Automation & Efficiency</h4>
+                                    <p class="text-gray-600">I leverage scripting and automation to make security testing more efficient and reproducible, allowing me to focus on complex attack scenarios.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800 text-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">
+                <span class="border-b-4 border-secondary pb-2">Technical Skills</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Web Security -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover transition duration-300 text-gray-200">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Web Application Security</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            OWASP Top 10 vulnerabilities
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Burp Suite Professional
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            HTML/CSS/JavaScript security
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Web application firewalls
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Network Security -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md card-hover transition duration-300 text-gray-200">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Network Penetration Testing</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Network vulnerability assessment
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Firewall and IDS/IPS evasion
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Wireless security testing
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            VPN security assessment
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Red Teaming -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md card-hover transition duration-300 text-gray-200">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Red Teaming</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Adversary simulation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Social engineering
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Physical security testing
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Purple teaming exercises
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tools -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md card-hover transition duration-300 text-gray-200">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Tools & Technologies</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Burp Suite</span>
+                        <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Metasploit</span>
+                        <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Nmap</span>
+                        <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Wireshark</span>
+                        <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Git/GitHub</span>
+                        <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Bootstrap</span>
+                        <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Linux</span>
+                        <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">Kali Linux</span>
+                    </div>
+                </div>
+                
+                <!-- Development -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition duration-300">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Development Skills</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            HTML/CSS (Tailwind, Bootstrap)
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            JavaScript security
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Secure coding practices
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Scripting for automation
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Methodologies -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition duration-300">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Methodologies</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            OWASP Testing Guide
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            PTES framework
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            MITRE ATT&CK
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Threat modeling
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800 text-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">
+                <span class="border-b-4 border-secondary pb-2">Security Projects</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover transition duration-300">
+                    <div class="h-48 bg-secondary flex items-center justify-center">
+                        <i class="fas fa-lock-open text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Web App Vulnerability Scanner</h3>
+                        <p class="text-gray-600 mb-4">A custom-built scanner that identifies common web vulnerabilities like XSS, SQLi, and CSRF with high accuracy.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">JavaScript</span>
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">Burp Suite</span>
+                            </div>
+                            <a href="#" class="text-secondary hover:underline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg card-hover transition duration-300 text-gray-200">
+                    <div class="h-48 bg-secondary flex items-center justify-center">
+                        <i class="fas fa-network-wired text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Network Security Assessment Tool</h3>
+                        <p class="text-gray-600 mb-4">Automated tool for identifying network vulnerabilities, misconfigurations, and weak encryption protocols.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">Python</span>
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">Nmap</span>
+                            </div>
+                            <a href="#" class="text-secondary hover:underline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg card-hover transition duration-300">
+                    <div class="h-48 bg-secondary flex items-center justify-center">
+                        <i class="fas fa-user-secret text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Red Team Toolkit</h3>
+                        <p class="text-gray-600 mb-4">A collection of custom scripts and tools for red team operations, including persistence mechanisms and lateral movement.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">Bash</span>
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">PowerShell</span>
+                            </div>
+                            <a href="#" class="text-secondary hover:underline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg card-hover transition duration-300">
+                    <div class="h-48 bg-secondary flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Secure Coding Guidelines</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive documentation and examples for developers to prevent common security vulnerabilities in web applications.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">HTML</span>
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">JavaScript</span>
+                            </div>
+                            <a href="#" class="text-secondary hover:underline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg card-hover transition duration-300">
+                    <div class="h-48 bg-secondary flex items-center justify-center">
+                        <i class="fas fa-phishing text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Phishing Awareness Platform</h3>
+                        <p class="text-gray-600 mb-4">An interactive training platform that simulates phishing attacks to educate employees about security threats.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">Bootstrap</span>
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">PHP</span>
+                            </div>
+                            <a href="#" class="text-secondary hover:underline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg card-hover transition duration-300">
+                    <div class="h-48 bg-secondary flex items-center justify-center">
+                        <i class="fas fa-bug text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Bug Bounty Dashboard</h3>
+                        <p class="text-gray-600 mb-4">A dashboard to track and manage bug bounty submissions, vulnerabilities, and remediation progress.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">React</span>
+                                <span class="bg-primary text-white px-2 py-1 text-xs rounded">Node.js</span>
+                            </div>
+                            <a href="#" class="text-secondary hover:underline">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition duration-300">
+                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gray-800 text-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">
+                <span class="border-b-4 border-secondary pb-2">Certifications</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Certification 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Offensive Security Certified Professional (OSCP)</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">The OSCP certification validates my hands-on ability to identify vulnerabilities, execute attacks, and document findings professionally.</p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">Issued:</span> 2022 | <span class="font-semibold">Credential ID:</span> OSCP-123456
+                    </div>
+                </div>
+                
+                <!-- Certification 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Certified Ethical Hacker (CEH)</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">The CEH certification demonstrates my knowledge of ethical hacking methodologies, tools, and techniques used by cybersecurity professionals.</p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">Issued:</span> 2021 | <span class="font-semibold">Credential ID:</span> CEH-789012
+                    </div>
+                </div>
+                
+                <!-- Certification 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Burp Suite Certified Practitioner (BSCP)</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">This certification validates my expertise in using Burp Suite for web application security testing and vulnerability identification.</p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">Issued:</span> 2023 | <span class="font-semibold">Credential ID:</span> BSCP-345678
+                    </div>
+                </div>
+                
+                <!-- Certification 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">CompTIA Security+</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">The Security+ certification demonstrates my foundational knowledge of cybersecurity concepts and best practices.</p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">Issued:</span> 2020 | <span class="font-semibold">Credential ID:</span> COMP001023
+                    </div>
+                </div>
+                
+                <!-- Certification 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Certified Red Team Professional (CRTP)</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">The CRTP certification validates my skills in advanced attack techniques, lateral movement, and Active Directory security.</p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">Issued:</span> 2023 | <span class="font-semibold">Credential ID:</span> CRTP-901234
+                    </div>
+                </div>
+                
+                <!-- Certification 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">GitHub Security Lab Certified</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">This certification demonstrates my ability to identify and remediate security vulnerabilities in code using GitHub's security tools.</p>
+                    <div class="text-sm text-gray-500">
+                        <span class="font-semibold">Issued:</span> 2023 | <span class="font-semibold">Credential ID:</span> GHSC-567890
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTF Achievements Section -->
+    <section id="ctf" class="py-20 bg-gray-800 text-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">
+                <span class="border-b-4 border-secondary pb-2">CTF Achievements</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- TryHackMe -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-flag text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">TryHackMe</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Ranked in top 1% with 500+ rooms completed, specializing in:</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Web application security challenges
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Privilege escalation techniques
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Network penetration testing
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Cryptography challenges
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#" class="text-secondary hover:underline flex items-center">
+                            View Profile <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- HackTheBox -->
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-cube text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">HackTheBox</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Pro Hacker with 200+ machines rooted, excelling in:</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Active Directory exploitation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Real-world scenario simulations
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Advanced privilege escalation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            Custom exploit development
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#" class="text-secondary hover:underline flex items-center">
+                            View Profile <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">
+                <span class="border-b-4 border-secondary pb-2">Get In Touch</span>
+            </h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h3 class="text-2xl font-semibold mb-6">Let's Talk Security</h3>
+                    <p class="mb-8">Whether you're looking to assess your organization's security posture, discuss potential vulnerabilities, or just chat about the latest security trends, I'd love to hear from you.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p>contact@rokzcysecurity.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">GitHub</h4>
+                                <p>github.com/rokzcy-security</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-secondary text-white p-3 rounded-full mr-4">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">LinkedIn</h4>
+                                <p>linkedin.com/in/rokzcy-excellence</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h4 class="font-semibold mb-4">Security Disclosure Policy</h4>
+                        <p class="mb-4">If you've discovered a security vulnerability, please responsibly disclose it through my secure channel:</p>
+                        <a href="#" class="inline-block bg-secondary text-white px-4 py-2 rounded-lg text-sm">
+                            <i class="fas fa-lock mr-2"></i> Submit Vulnerability Report
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12">
+                    <form class="bg-gray-800 p-8 rounded-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 font-semibold">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 font-semibold">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block mb-2 font-semibold">Subject</label>
+                            <select id="subject" class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <option value="">Select a topic</option>
+                                <option value="pentest">Penetration Testing Inquiry</option>
+                                <option value="redteam">Red Teaming Services</option>
+                                <option value="training">Security Training</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 font-semibold">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="encrypt" class="mr-2">
+                                <label for="encrypt">Encrypt this message with PGP</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-secondary text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                            Send Secure Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-user-secret text-secondary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl">Rokzcy Excellence</span>
+                    </div>
+                    <p class="mt-2 text-gray-400">Security through ethical offense.</p>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition duration-300">
+                        <i class="fab fa-hacker-news text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="text-gray-400 text-sm">
+                    <p>&copy; 2023 Rokzcy Excellence. All rights reserved.</p>
+                    <p class="mt-1">Securely built with HTML, CSS, and JavaScript.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-xs">
+                <p>This website is for demonstration purposes only. No actual security services are being offered.</p>
+                <p class="mt-2">Last updated: June 2023</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.querySelector('.mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Terminal typing effect for certifications section
+        const certifications = document.querySelectorAll('#certifications .card-hover');
+        certifications.forEach((cert, index) => {
+            cert.style.transitionDelay = `${index * 100}ms`;
+        });
+    </script>
+</body>
+</html>
